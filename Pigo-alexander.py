@@ -72,6 +72,12 @@ class Pigo:
             right()
         time.sleep(2.5)
         self.stop()
+        fwd()
+        self.stop()
+        right()
+        self.stop()
+        fwd()
+        self.stop()
 
     def circleLeft(self):
         self.status['ismoving'] = True
@@ -79,6 +85,12 @@ class Pigo:
         for x in range(3):
             left()
         time.sleep(2.5)
+        self.stop()
+         fwd()
+        self.stop()
+        left()
+        self.stop()
+        fwd()
         self.stop()
 
     def shuffle(self):
@@ -119,6 +131,7 @@ class Pigo:
     def blink(self):
         for x in range(5):
             led_on(1)
+
             led_on(0)
             time.sleep(.1)
             led_off(1)
