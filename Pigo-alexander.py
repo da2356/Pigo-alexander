@@ -86,7 +86,7 @@ class Pigo:
             left()
         time.sleep(2.5)
         self.stop()
-         fwd()
+        fwd()
         self.stop()
         left()
         self.stop()
