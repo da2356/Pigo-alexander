@@ -86,7 +86,7 @@ class Pigo:
             left()
         time.sleep(2.5)
         self.stop()
-         set_left_speed(215)
+        set_left_speed(215)
         set_right_speed(75)
         for x in range(3):
             fwd()
