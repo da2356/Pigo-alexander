@@ -96,19 +96,19 @@ class Pigo:
     def shuffle(self):
         print "Get down and shuffle."
         fwd()
-        time.sleep(.1)
+        time.sleep(1)
         self.stop()
         time.sleep(.1)
         bwd()
-        time.sleep(.1)
+        time.sleep(1)
         self.stop()
         time.sleep(.1)
         left()
-        time.sleep(.1)
+        time.sleep(1)
         self.stop()
         time.sleep(.1)
         right()
-        time.sleep(.1)
+        time.sleep(1)
         self.stop()
         time.sleep(.1)
         print "Lets shake things up."
