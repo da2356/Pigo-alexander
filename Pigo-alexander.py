@@ -92,7 +92,10 @@ class Pigo:
         self.stop()
         fwd()
         self.stop()
-
+    def servoScan(self):
+        for x in range(20,160,5):
+            servo(x)
+            time.sleep(.3)
     def shuffle(self):
         print "Get down and shuffle."
         fwd()
