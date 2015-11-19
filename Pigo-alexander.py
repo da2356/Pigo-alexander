@@ -93,6 +93,7 @@ class Pigo:
         fwd()
         self.stop()
     def servoScan(self):
+        print "Looking for threats"
         for x in range(20,160,5):
             servo(x)
             time.sleep(.3)
@@ -155,6 +156,7 @@ class Pigo:
         if self.keepGoing():
             self.circleRight()
             self.circleLeft()
+            self.servoScan()
             self.shuffle()
             self.servoShake()
             self.blink()
