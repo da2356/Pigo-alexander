@@ -3,8 +3,6 @@
 from gopigo import *
 import time
 STOP_DIST = 50
-set_right_speed(125)
-set_left_speed(175)
 class Pigo:
 
     status = {"ismoving": False, "servo": 90, "leftspeed": 175, "rightspeed": 175, 'dist': 100}
@@ -72,12 +70,14 @@ class Pigo:
             right()
         time.sleep(2.5)
         self.stop()
-        fwd()
+        set_left_speed(75)
+        set_right_speed(215)
+        for x in range(3):
+            fwd()
+        time.sleep(1.5)
         self.stop()
-        right()
-        self.stop()
-        fwd()
-        self.stop()
+        set_left_speed(200)
+        set_right_speed(200)
 
     def circleLeft(self):
         self.status['ismoving'] = True
@@ -86,12 +86,14 @@ class Pigo:
             left()
         time.sleep(2.5)
         self.stop()
-        fwd()
+         set_left_speed(215)
+        set_right_speed(75)
+        for x in range(3):
+            fwd()
+        time.sleep(1.5)
         self.stop()
-        left()
-        self.stop()
-        fwd()
-        self.stop()
+        set_left_speed(200)
+        set_right_speed(200)
     def servoScan(self):
         print "Looking for threats"
         for x in range(20,160,5):
