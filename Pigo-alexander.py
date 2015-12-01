@@ -149,10 +149,30 @@ class Pigo:
         while self.keepGoing():
             self.checkDist()
         self.stop()
+    vision = []
     def servoSweep(self):
-        for ang in range(20, 160, 5):
+        for ang in range(20, 160, 2):
             servo(ang)
             time.sleep(.1)
+            vison[ang] = us_dist(15)
+    def checkTwenty(self):
+        for ang in range(20, 160, 2):
+            counter = 0
+            if vision[ang] > 50:
+                counter += 1
+            else:
+                counter = 0
+            if counter == 10:
+                return ang
+    def turnTo(self):
+        enable_encoders()
+        enc_tgt(1, 0, )
+
+    def turnAway(self):
+
+
+
+
     def dance(self):
         print "I just want to DANCE!"
         if self.keepGoing():
@@ -166,6 +186,6 @@ class Pigo:
 
 
 tina = Pigo()
-tina.dance()
+
 tina.stop()
 
