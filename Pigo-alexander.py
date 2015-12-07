@@ -169,8 +169,15 @@ class Pigo:
         enc_tgt(1, 0, )
 
     def turnAway(self):
-
-
+        enable_encoders()
+        enc_tgt(1, 0, 18)
+        right_rot()
+        fwd()
+        time.sleep(1)
+        self.stop()
+        enable_encoders()
+        enc_tgt(1, 0, 18)
+        right_rot()
 
 
     def dance(self):
@@ -186,6 +193,14 @@ class Pigo:
 
 
 tina = Pigo()
-
+while True:
+    if tina.checkDist():
+        tina.safeDrive()
+    else:
+        tina.servoSweep()
+        if tina.checkTwenty():
+            tina.turnTo(tina.findAngle())
+        else:
+            tina.turnAway()
 tina.stop()
 
