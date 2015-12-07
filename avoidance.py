@@ -58,8 +58,6 @@ class Pigo:
                 counter = 0
             if counter == 10:
                 return ang
-    def turnTo(self):
-
 
     def turnAway(self):
         enable_encoders()
