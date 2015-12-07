@@ -1,7 +1,7 @@
 from gopigo import *
 import time
 right_rot()
-time.sleep(.8)
+time.sleep(.9)
 stop()
 stop()
 stop()
