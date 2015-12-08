@@ -50,10 +50,9 @@ class Pigo:
         self.stop()
 
     def servoSweep(self):
-        for x in range(1):
-            for ang in range(20, 160, 2):
-                servo(ang)
-            self.vision[ang] = us_dist(15)
+        for ang in range(20, 160, 2):
+            servo(ang)
+        self.vision[ang] = us_dist(15)
 
     def checkTwenty(self):
         self.opt1, self.opt2 = None
