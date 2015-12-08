@@ -3,7 +3,7 @@ import time
 STOP_DIST = 50
 class Pigo:
     vision = [None] * 180
-    opt1, opt2 = None
+    opt1, opt2 = 0, 0
     wentleftlast = True
     status = {"ismoving": False, "servo": 90, "leftspeed": 175, "rightspeed": 175, 'dist': 100}
 
@@ -73,10 +73,10 @@ class Pigo:
         BIGTURN = .26
         MIDTURN = .2
         SMTURN = .12
-        if not self.opt1:
+        if self.opt1 == 0:
             self.turnAway()
         turnchoice = self.opt1
-        if self.opt2 and not self.wentleftlast:
+        if self.opt2 != 0 and not self.wentleftlast:
             turnchoice = self.opt2
         if turnchoice <= 90:
             self.wentleftlast = True
