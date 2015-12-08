@@ -2,7 +2,7 @@ from gopigo import *
 import time
 STOP_DIST = 50
 class Pigo:
-    vision = []
+    vision = [None] * 180
     opt1, opt2 = None
     wentleftlast = True
     status = {"ismoving": False, "servo": 90, "leftspeed": 175, "rightspeed": 175, 'dist': 100}
