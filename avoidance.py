@@ -54,7 +54,7 @@ class Pigo:
             servo(ang)
             time.sleep(.1)
             self.vision[ang] = us_dist(15)
-            self.stop()
+
     def checkTwenty(self):
         self.opt1, self.opt2 = None
         for ang in range(20, 160, 2):
@@ -71,9 +71,9 @@ class Pigo:
                 return ang
 
     def turnTo(self):
-        BIGTURN = .26
-        MIDTURN = .2
-        SMTURN = .12
+        bigturn = .26
+        midturn = .2
+        smturn = .12
         if self.opt1 == 0:
             self.turnAway()
         turnchoice = self.opt1
@@ -84,19 +84,19 @@ class Pigo:
         else:
             self.wentleftlast = False
         if 20 <= turnchoice < 40:
-            sec = BIGTURN
+            sec = bigturn
         elif 40 <= turnchoice < 60:
-            sec = MIDTURN
+            sec = midturn
         elif 60 <= turnchoice < 80:
-            sec = SMTURN
+            sec = smturn
         elif 80 <= turnchoice < 100:
             sec = 0
         elif 100 <= turnchoice < 120:
-            sec = SMTURN
+            sec = smturn
         elif 120 <= turnchoice < 140:
-            sec = MIDTURN
+            sec = midturn
         elif 140 <= turnchoice < 160:
-            sec = BIGTURN
+            sec = bigturn
         if turnchoice < 90:
             left_rot()
             time.sleep(sec)
@@ -124,7 +124,7 @@ tina = Pigo()
 while True:
     if tina.keepGoing():
         tina.safeDrive()
-    if tina.servoSweep():
+    elif tina.servoSweep():
         tina.turnTo(tina.checkTwenty())
 
 
