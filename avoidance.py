@@ -52,7 +52,8 @@ class Pigo:
     def servoSweep(self):
         for ang in range(20, 160, 2):
             servo(ang)
-        self.vision[ang] = us_dist(15)
+            time.sleep(.1)
+            self.vision[ang] = us_dist(15)
 
     def checkTwenty(self):
         self.opt1, self.opt2 = None
@@ -123,7 +124,8 @@ tina = Pigo()
 while True:
     if tina.keepGoing():
         tina.safeDrive()
-    elif tina.servoSweep():
+    else:
+        tina.servoSweep()
         tina.turnTo(tina.checkTwenty())
 
 
