@@ -1,6 +1,6 @@
 from gopigo import *
 import time
-STOP_DIST = 50
+STOP_DIST = 80
 class Pigo:
     vision = [None] * 180
     opt1, opt2 = 0, 0
@@ -50,8 +50,9 @@ class Pigo:
         self.stop()
 
     def servoSweep(self):
-        for ang in range(20, 160, 2):
-            servo(ang)
+        for x in range(1):
+            for ang in range(20, 160, 2):
+                servo(ang)
             self.vision[ang] = us_dist(15)
 
     def checkTwenty(self):
