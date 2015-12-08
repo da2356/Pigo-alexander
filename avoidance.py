@@ -54,6 +54,7 @@ class Pigo:
             servo(ang)
             time.sleep(.1)
             self.vision[ang] = us_dist(15)
+            break
     def checkTwenty(self):
         self.opt1, self.opt2 = None
         for ang in range(20, 160, 2):
