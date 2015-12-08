@@ -36,6 +36,10 @@ class Pigo:
         print "Oh boy"
         for x in range(3):
             stop()
+    def allStop(self):
+        print "Stopping"
+        for x in range(3):
+            stop()
     def fwd(self):
         self.isMoving = True
         print "Let's do this."
@@ -101,11 +105,11 @@ class Pigo:
         if turnchoice < 90:
             left_rot()
             time.sleep(sec)
-            self.stop()
+            self.allStop()
         else:
             right_rot()
             time.sleep(sec)
-            self.stop()
+            self.allStop()
     def turnAway(self):
         enable_encoders()
         enc_tgt(1, 0, 18)
