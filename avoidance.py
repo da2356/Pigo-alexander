@@ -56,7 +56,8 @@ class Pigo:
             self.vision[ang] = us_dist(15)
 
     def checkTwenty(self):
-        self.opt1, self.opt2 = None
+        self.opt1 = None
+        self.opt2 = None
         for ang in range(20, 160, 2):
             counter = 0
             if self.vision[ang] > 50:
