@@ -127,7 +127,8 @@ while True:
         tina.safeDrive()
     else:
         tina.servoSweep()
-        tina.turnTo(tina.checkTwenty())
+        tina.checkTwenty()
+        tina.turnTo()
 
 
 tina.stop()
