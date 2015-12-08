@@ -52,7 +52,6 @@ class Pigo:
     def servoSweep(self):
         for ang in range(20, 160, 2):
             servo(ang)
-            time.sleep(.1)
             self.vision[ang] = us_dist(15)
 
     def checkTwenty(self):
