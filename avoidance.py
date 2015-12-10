@@ -73,12 +73,15 @@ class Pigo:
                     self.opt2 = ang - 10
                 else:
                     self.opt1 = ang - 10
+                print ang
                 return ang
 
     def turnTo(self):
         bigturn = .26
         midturn = .2
         smturn = .12
+        sec = .1
+        print "Our first option is:" + str(self.opt1)
         if self.opt1 == 0:
             self.turnAway()
         turnchoice = self.opt1
@@ -88,6 +91,7 @@ class Pigo:
             self.wentleftlast = True
         else:
             self.wentleftlast = False
+        print "Turnchoice is set to: " + str(turnchoice)
         if 20 <= turnchoice < 40:
             sec = .26
         elif 40 <= turnchoice < 60:
