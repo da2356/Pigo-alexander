@@ -54,6 +54,7 @@ class Pigo:
         self.stop()
 
     def servoSweep(self):
+        print "Sweeping now"
         for ang in range(20, 160, 2):
             servo(ang)
             time.sleep(.1)
