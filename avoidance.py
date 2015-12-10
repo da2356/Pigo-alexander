@@ -1,6 +1,6 @@
 from gopigo import *
 import time
-STOP_DIST = 80
+STOP_DIST = 50
 class Pigo:
     vision = [None] * 180
     opt1, opt2 = 0, 0
@@ -89,40 +89,30 @@ class Pigo:
         else:
             self.wentleftlast = False
         if 20 <= turnchoice < 40:
-            sec = bigturn
+            sec = .26
         elif 40 <= turnchoice < 60:
-            sec = midturn
+            sec = .2
         elif 60 <= turnchoice < 80:
-            sec = smturn
+            sec = .12
         elif 80 <= turnchoice < 100:
             sec = 0
         elif 100 <= turnchoice < 120:
-            sec = smturn
+            sec = .12
         elif 120 <= turnchoice < 140:
-            sec = midturn
+            sec = .2
         elif 140 <= turnchoice < 160:
-            sec = bigturn
+            sec = .26
         if turnchoice < 90:
-            left_rot()
+            left()
             time.sleep(sec)
-            self.allStop()
+            self.stop()
         else:
-            right_rot()
+            right()
             time.sleep(sec)
-            self.allStop()
+            self.stop()
     def turnAway(self):
-        enable_encoders()
-        enc_tgt(1, 0, 18)
-        right_rot()
-        fwd()
-        time.sleep(1)
-        self.stop()
-        enable_encoders()
-        enc_tgt(1, 0, 18)
-        right_rot()
-    def test(self):
-        right_rot()
-        time.sleep(.1)
+        bwd()
+        time.sleep(1.5)
         self.stop()
 
 tina = Pigo()
