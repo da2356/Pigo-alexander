@@ -59,6 +59,7 @@ class Pigo:
             servo(ang)
             time.sleep(.1)
             self.vision[ang] = us_dist(15)
+        servo(90)
 
     def checkTwenty(self):
         self.opt1 = None
